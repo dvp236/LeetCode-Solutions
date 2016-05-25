@@ -1,7 +1,11 @@
 package problems;
-
-import java.util.ArrayList;
-
+/**
+ * 
+ * @author dharmik patel
+ * Implement a method to get longest non repeating subsequence
+ * of the string.
+ *
+ */
 public class LongestSubString {
 	
 }
