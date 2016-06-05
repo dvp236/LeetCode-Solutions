@@ -18,10 +18,11 @@ public class LongestSubString {
 		HashMap<Character,Integer> map = new HashMap<Character, Integer>();
 		for(int j=0;j<st.length();j++){
 			if(!map.containsKey(st.charAt(j))){
-				result = Math.max(i, j-i);
+				map.put(st.charAt(j),j);
 			}else{
-				i++;
-				map.put(st.charAt(i),j);
+				i = map.get(st.charAt(j));
+				result = Math.max(result, j-i);
+				
 			}
 		}
 		return result;
@@ -60,6 +61,28 @@ public class LongestSubString {
         }
         return ans;
     }
+	public static String uniqueCharSubstring(String str) {
+        String result = "";
+        int len = str.length();
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        char[] c = str.toCharArray();
+        int right = 0, max = 0;
+        for (int left = 0; left < len; left++) {
+            while (right < len) {
+                if (map.containsKey(c[right])) { 
+                    left = Math.max(left, map.get(c[right]) + 1);
+                }
+                map.put(c[right], right);
+                if (right - left > max) { 
+                    max = right - left;
+                    result = str.substring(left, right + 1);
+                }
+                right++;
+            }
+        }
+        return result;
+   }
+ 
 	public static void main(String[] args){
 		String st="abcdeabcdttdbbj";
 		String st2 = "pwwkettw";
@@ -67,6 +90,7 @@ public class LongestSubString {
 		System.out.println(lengthOfLongestSubstring(st));
 		System.out.println(getLSubString(st));
 		System.out.println(lengthOfLongestSubstringL(st));
+		System.out.println(uniqueCharSubstring(st));
 		
 	}
 }
