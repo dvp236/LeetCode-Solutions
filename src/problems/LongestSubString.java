@@ -14,14 +14,19 @@ public class LongestSubString {
 	
 	public static int getLSubString(String st){
 		int result = 0;
-		int i=0;
+		int i=0;//this will track repeating character index
 		HashMap<Character,Integer> map = new HashMap<Character, Integer>();
 		for(int j=0;j<st.length();j++){
+			//put new char in the map with index
 			if(!map.containsKey(st.charAt(j))){
 				map.put(st.charAt(j),j);
-			}else{
+			}else{//if the character is already in the map
+				//calculate the length of substring 
+				//i.e current index - last seen index
 				i = map.get(st.charAt(j));
 				result = Math.max(result, j-i);
+				//update its index
+				map.put(st.charAt(j),j);
 				
 			}
 		}
@@ -85,12 +90,12 @@ public class LongestSubString {
  
 	public static void main(String[] args){
 		String st="abcdeabcdttdbbj";
-		String st2 = "pwwkettw";
+		String st2 = "pwwkew";
 		
-		System.out.println(lengthOfLongestSubstring(st));
+		//System.out.println(lengthOfLongestSubstring(st));
 		System.out.println(getLSubString(st));
-		System.out.println(lengthOfLongestSubstringL(st));
-		System.out.println(uniqueCharSubstring(st));
+		//System.out.println(lengthOfLongestSubstringL(st));
+		//System.out.println(uniqueCharSubstring(st2));
 		
 	}
 }
