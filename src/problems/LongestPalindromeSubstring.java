@@ -1,6 +1,7 @@
 package problems;
 
 public class LongestPalindromeSubstring {
+
 	public static String getLongestPalindrome(String st){
 		String result = "";
 		for(int i=1;i<st.length()-1;i++){
