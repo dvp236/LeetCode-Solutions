@@ -34,6 +34,7 @@ public class LongestSubString {
             result = Math.max(result, j - i+1);
             map.put(s.charAt(j), j+1);
         }
+	//If you want to have substring
         System.out.println(s.substring(lo,hi));
         return result;
     }
