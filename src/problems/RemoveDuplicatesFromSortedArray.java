@@ -6,8 +6,10 @@ public class RemoveDuplicatesFromSortedArray {
 
 	//Time Complexity: O(n)
 	public static int[] removeDuplicates(int a[]){
+		if(a.length == 0 || a.length==1) return a;
+		
 		int i=0;
-
+		
 		for(int j=1;j<a.length;j++){
 			if(a[i] != a[j]){
 				i++;
@@ -16,6 +18,7 @@ public class RemoveDuplicatesFromSortedArray {
 		}
 		Arrays.fill(a, i+1, a.length, 0);
 		System.out.println("Duplicate count: "+ (a.length-1-i));
+		System.out.println("New Lenth of Array: "+(i+1));
 		return a;
 	}
 	
@@ -31,7 +34,7 @@ public class RemoveDuplicatesFromSortedArray {
 	}
 	
 	public static void main(String[] args) {
-		int[] a = new int[]{1,1,1,2,2,3,3,3,4};
+		int[] a = new int[]{1,2};
 		System.out.println(countDuplicates(a));
 		System.out.println(Arrays.toString(removeDuplicates(a)));
 	
