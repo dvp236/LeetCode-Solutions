@@ -1,5 +1,11 @@
 package problems;
 
+/**
+ * 
+ * @author dharmik
+ * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+ *
+ */
 public class SymmetricTree {
 	
 	public static boolean isSym(TreeNode root) {
