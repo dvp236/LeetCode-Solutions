@@ -9,7 +9,7 @@ public class RemoveDuplicatesFromSortedArray {
 		if(a.length == 0 || a.length==1) return a;
 		
 		int i=0;
-		
+		//1 2 2 2 3
 		for(int j=1;j<a.length;j++){
 			if(a[i] != a[j]){
 				i++;
@@ -34,7 +34,7 @@ public class RemoveDuplicatesFromSortedArray {
 	}
 	
 	public static void main(String[] args) {
-		int[] a = new int[]{1,2};
+		int[] a = new int[]{1,2,2,2,3};
 		System.out.println(countDuplicates(a));
 		System.out.println(Arrays.toString(removeDuplicates(a)));
 	

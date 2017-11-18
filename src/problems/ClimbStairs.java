@@ -10,7 +10,7 @@ public class ClimbStairs {
 	//this is classic problem. It can be solved using fibonacci series.
 	//since total number of steps at i, dp[i] = dp[i-1] + dp[i-2]
 	public static int climbStairs(int n) {
-		if( n<=1 ) return n;
+		if ( n <= 1 ) return n;
 		
 		int[] result = new int[n+1];
 		result[1] = 1;

@@ -7,13 +7,13 @@ public class BuySellStock {
 		int min = prices[0];
 		int max = prices[0];
 		
-		for(int i = 0 ; i < prices.length; i++ ) {
+		for (int i = 0 ; i < prices.length; i++ ) {
 			
-			if(prices[i] < min) {
+			if (prices[i] < min) {
 				min = prices[i];
 				max = prices[i];
 			}
-			if (prices[i] > max){
+			if (prices[i] > max) {
 				max = prices[i];
 				profit = Math.max(profit, max -min);
 			}

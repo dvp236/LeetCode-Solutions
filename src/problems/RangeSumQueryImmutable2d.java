@@ -17,6 +17,7 @@ public class RangeSumQueryImmutable2d {
 		dp = new int[a.length+1][a[0].length+1];
 		for(int i = 0; i < a.length;  i++) {
 			for(int j = 0; j < a[0].length; j++) {
+				//dp[i][j] has already been counted in dp[i+1][j] & dp[i][j+1]. so exclude it one time.
 				dp[i+1][j+1] = dp[i+1][j] + dp[i][j+1] + a[i][j] - dp[i][j];
 			}
 		}

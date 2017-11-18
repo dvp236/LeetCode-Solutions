@@ -16,10 +16,10 @@ public class FindPeakElement {
 	
 	//we will tweak binary search.
 	//move close to highest element with every search
-	public static int helper(int[] a, int lo, int hi){
-		while(lo < hi) {
+	public static int helper(int[] a, int lo, int hi) {
+		while (lo < hi) {
 			int mid = (lo+hi)/2;
-			if(a[mid] < a[mid+1])
+			if (a[mid] < a[mid+1])
 				lo = mid+1;
 			else 
 				hi = mid;

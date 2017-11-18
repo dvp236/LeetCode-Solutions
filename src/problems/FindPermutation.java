@@ -30,9 +30,9 @@ public class FindPermutation {
 		
 		//push into stack when discover D
 		//pop and insert to array when discover I
-		for(int i = 1; i <= s.length(); i++) {
+		for (int i = 1; i <= s.length(); i++) {
 			char c = s.charAt(i-1);
-			if( c=='I'){
+			if( c == 'I'){
 				st.push(i);
 				while(!st.empty())
 					list.add(st.pop());
