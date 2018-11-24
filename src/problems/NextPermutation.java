@@ -24,10 +24,12 @@ public class NextPermutation {
 		int k=a.length-2,j;
 		
 		while(k>=0 && a[k]>=a[k+1]) k--;
-		
+		System.out.println("k"+k);
+
 		if(k>=0){
 			j=a.length-1;
 			while(j>=0 && a[j] <= a[k]) j--;
+			System.out.println("j"+j);
 			swap(a,k,j);
 		}
 		
@@ -51,7 +53,7 @@ public class NextPermutation {
 	}
 	public static void main(String[] args) {
 		//System.out.println("gajab");
-		int[] a = new int[]{1,5,1};
+		int[] a = new int[]{1,2,3};
 		System.out.println(Arrays.toString(a));
 		System.out.println(Arrays.toString(nextPermutation(a)));
 	}

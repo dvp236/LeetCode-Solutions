@@ -4,6 +4,7 @@ public class LongestPalindromeSubstring {
 
 	public static String getLongestPalindrome(String st){
 		String result = "";
+		//jabbargajaBBajaglalalala
 		for(int i=1;i<st.length()-1;i++){
 			//get the palindrome string around index i
 			//This is for odd length of palindrome
@@ -12,6 +13,8 @@ public class LongestPalindromeSubstring {
 			//this is for even length of palindrome-->"baab"
 			String s2= findPattern(st,i,i+1);
 			if(s2.length() > result.length()) result = s2;
+			//aba
+			//baab
 		}
 		return result;
 	}
