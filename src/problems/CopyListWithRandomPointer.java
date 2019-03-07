@@ -1,5 +1,16 @@
 package problems;
 
+/**
+ * 
+ * @author dharmik
+ * Here the idea is to make a duplicate node of each node.
+ * and just point the original to duplicate.
+ * thus for ex = 1->2->3->null
+ * will be 1->1->2->2->3->3->4->4->null
+ * now separate two list updating correct next and random
+ * and then return copy.
+ *
+ */
 class Node{
 	int data;
 	Node next;
@@ -16,6 +27,7 @@ public class CopyListWithRandomPointer {
 	public static Node getCopy(Node head) {
 		Node curr = head;
 		
+		//create duplicate nodes for each and put it next to original
 		while (curr!= null) {
 			Node cnode = new Node(curr.data);
 			Node temp = curr.next;
@@ -23,16 +35,19 @@ public class CopyListWithRandomPointer {
 			cnode.next = temp;
 			curr = temp;
 		}
-		//nextOrderPrint(head);
+
+		//now update randoms of duplicate nodes.
 		curr = head;
 		while(curr != null) {
-			Node cnode = curr.next;
-			if (curr.random != null)
-				cnode.random = curr.random.next;
-			curr = cnode.next;
+			Node copynode = curr.next;
+			if (curr.random != null){
+				copynode.random = curr.random.next;
+			}
+			curr = copynode.next;
 		}
 		curr = head;
 		Node chead = null;
+		//separate both lists
 		while(curr != null) {
 			Node cnode = curr.next;
 			if (chead == null) chead = cnode;
@@ -47,10 +62,7 @@ public class CopyListWithRandomPointer {
 		
 		return chead;
 	}
-	public static Node getDeepCopy(Node head) {
-		Node chead = new Node(head.data);
-		return chead;
-	}
+
 	
 	public static void nextOrderPrint(Node head) {
 		Node curr = head;
