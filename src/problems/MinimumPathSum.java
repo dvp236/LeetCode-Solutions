@@ -1,5 +1,7 @@
 package problems;
 
+import java.util.Arrays;
+
 /**
  * 
  * @author dharmik
@@ -20,12 +22,14 @@ public class MinimumPathSum {
 		
 		for(int i = 1; i < m ; i++)
 			grid[i][0] += grid[i-1][0];
-		
+		System.out.println(Arrays.toString(grid[0]));
 		for(int i = 1; i < m; i++) {
 			for(int j = 1; j < n; j++) {
 				grid[i][j] += Math.min(grid[i-1][j], grid[i][j-1]);				
 			}
+			System.out.println(Arrays.toString(grid[i]));
 		}
+		
 		
 		return grid[m-1][n-1];
 	}

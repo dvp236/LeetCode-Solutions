@@ -32,6 +32,7 @@ public class LongestSubString {
             }
             //calculate substring length at each iteration 
             result = Math.max(result, j - i+1);
+            //here we put j+1 so we dont have to increase index of i. becuase this value is going to be used as i in the first if.
             map.put(s.charAt(j), j+1);
         }
 	//If you want to have substring
@@ -44,5 +45,6 @@ public class LongestSubString {
 		String st2 = "pwwkewta";
 		System.out.println(getLengthOfSubstring(st2));
 		System.out.println(getLengthOfSubstring("abbcda"));
+
 	}
 }
