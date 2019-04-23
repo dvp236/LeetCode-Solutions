@@ -30,7 +30,7 @@ public class FindPeakElement {
 
 	public static void main(String[] args) {
 		int[] a = new int[]{5,6,7,8,9,10,4,2,1,2,3,4,5,4,3,2,1,0,3,4,5,6};
-		int[] b = new int[]{1,5,2,3,4,6,7,8};
+		int[] b = new int[]{1,2,3,1};
 		//does not work for this //actually this is valid case as 8 is also a peak element.
 		System.out.println(findPeakElement(b));
 	}

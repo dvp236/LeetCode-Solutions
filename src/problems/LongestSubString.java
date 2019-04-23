@@ -11,6 +11,18 @@ import java.util.HashSet;
  *
  */
 public class LongestSubString {
+	//pwwketaw
+	public static void test (String s) {
+		int n = s.length() -1, index, lo, hi, max=0; 
+		HashMap<Character, Integer> map = new HashMap<Character, Integer> ();
+		for (int i = 0 ; i <= n; i++) {
+			if (map.containsKey(s.charAt(i))) {
+				index = map.get(s.charAt(i));
+				max = Math.max(max, index);
+			}
+			
+		}
+	}
 	
 	public static int getLengthOfSubstring(String s) {
         int n = s.length(), result = 0; int lo=0,hi=0;

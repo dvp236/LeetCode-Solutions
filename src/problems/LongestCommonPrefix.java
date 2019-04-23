@@ -43,6 +43,7 @@ public class LongestCommonPrefix {
 		if(start==end) return strs[start];
 		else{
 			int mid = (start+end)/2;
+			System.out.println(mid);
 			String common1 = longestCommonPrefixDAC(strs,start,mid);
 			String common2 = longestCommonPrefixDAC(strs,mid+1,end);
 			return lcpHelper(common1,common2);
@@ -63,8 +64,8 @@ public class LongestCommonPrefix {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] strs = new String[]{"abclm","abcd","abcdef","ab","abcd"};
-		System.out.println(longestCommonPrefixOne(strs));
+		String[] strs = new String[]{"abclm","abcd","abfp"};
+		//System.out.println(longestCommonPrefixOne(strs));
 		
 		System.out.println(longestCommonPrefix(strs));
 	}
