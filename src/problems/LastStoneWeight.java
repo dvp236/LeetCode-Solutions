@@ -29,7 +29,35 @@ public class LastStoneWeight {
     }
 
     //implement bucket sort solution.
+    //O(n) but this performs well if we have more stones
     public static int lastStoneWieght2(int[] stones) {
+        if (stones == null || stones.length == 0) return 0;
+        if (stones.length == 1) return stones[0];
+
+        int max = 0;
+        for (int i = 0; i < stones.length; i++) {
+            max = Math.max(max, stones[i]);
+        }
+
+        int[] bucket = new int[max+1];
+        //2, 7, 4, 1, 8, 1
+        for (int i = 0 ; i < stones.length; i++) {
+            bucket[stones[i]]++;
+        }
+        System.out.println("bucket"+Arrays.toString(bucket));
+        int i = max;
+        while(i > 0) {
+            int smash = bucket[i] % 2;
+            if (smash != 0) {
+                int j = i - 1;
+                while ( j > 0 && bucket[j] == 0 ) j--;
+
+                if (j == 0) return i;
+                bucket[j]--;
+                bucket[i-j]++;
+            }
+            i--;
+        }
         return 0;
     }
 
@@ -48,9 +76,9 @@ public class LastStoneWeight {
     public static void main(String[] args) {
         System.out.println("Jay Swaminarayan!");
         int[] a = new int[]{2, 7, 4, 1, 8, 1};
-        System.out.println(lastStoneWeight(a));
-        System.out.println(lastStoneWeightWrost(a));
-
+//        System.out.println(lastStoneWeight(a));
+//        System.out.println(lastStoneWeightWrost(a));
+        System.out.println(lastStoneWieght2(a));
     }
 
 }
