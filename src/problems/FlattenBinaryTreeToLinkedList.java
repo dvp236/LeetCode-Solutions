@@ -21,13 +21,13 @@ public class FlattenBinaryTreeToLinkedList {
 	}
 	
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode(1);
-		root.left = new TreeNode(2);
-		root.left.left = new TreeNode(3);
-		root.left.right = new TreeNode(4);
+		TreeNode<Integer> root = new TreeNode<>(1);
+		root.left = new TreeNode<>(2);
+		root.left.left = new TreeNode<>(3);
+		root.left.right = new TreeNode<>(4);
 		
-		root.right = new TreeNode(5);
-		root.right.right = new TreeNode(6);
+		root.right = new TreeNode<>(5);
+		root.right.right = new TreeNode<>(6);
 		flattenTree(root);
 		TreeNode curr = root;
 		while (curr!=null) {

@@ -49,7 +49,7 @@ public class IsSubsequence {
 
 	public static void main(String[] args) {
 		System.out.println("Swaminarayan!");
-		ArrayList<Integer> a = new ArrayList<>(Arrays.asList(new Integer[]{1,3,4,9}));
+		ArrayList<Integer> a = new ArrayList<>(Arrays.asList(1,3,4,9));
 		
 		System.out.println(Collections.binarySearch(a, 11));
 		System.out.println(isSubsequence("ace", "abcde"));

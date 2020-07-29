@@ -29,6 +29,7 @@ public class FindTheTownJudge {
 		int[][] trust = new int[][]{
 			{1,3},{1,4},{2,3},{2,4},{4,3}
 		};
+		// [[1,3],[1,4],[2,3],[2,4],[4,3]]
 		
 		System.out.println(findJudge(4, trust));
 		

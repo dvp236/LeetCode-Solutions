@@ -14,7 +14,7 @@ public class InvertBinTree {
         node.left = node.right;
         node.right = temp;
     }
-    
+
     //O(N). Recursive approach: DFS
     public static void invertTree(TreeNode node) {
         if (node != null)  {

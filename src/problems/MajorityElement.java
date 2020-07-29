@@ -17,7 +17,7 @@ public class MajorityElement {
 	//but this approach is most efficient as space O(1) and time is O(N)
 	//Boyer-Moore Voting Algorithm
 	public static int majorityElement(int[] a) {
-		Integer num = a[0];
+		int num = a[0];
 		int count = 0;
 		
 		for (int i = 0; i < a.length; i++) {

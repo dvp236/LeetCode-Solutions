@@ -6,6 +6,8 @@ import java.util.Stack;
 import java.util.Vector;
 
 public class CandyCrush1D {
+
+	//only works for exactly 3 same candies
 	private static String crushCandy(String input) {
         Vector<Character> characters = new Vector<>();
         for (char c: input.toCharArray()) {
@@ -90,7 +92,7 @@ public class CandyCrush1D {
 		
 		//until both the string becomes equal and no candy crushed
 		while(s.length() != pass(s).length()) {
-			System.out.println("pass- "+pass(s));
+//			System.out.println("pass- "+pass(s));
 			s = pass(s);
 		}
 		
@@ -100,7 +102,6 @@ public class CandyCrush1D {
 	private static String pass(String s) {
 		for (int i=0; i<s.length(); i++) {
 			int cnt = 1;
-			int start = i;
 			while (i < s.length()-1 && s.charAt(i) == s.charAt(i+1)) {
 				cnt++;
 				i++;
@@ -117,8 +118,9 @@ public class CandyCrush1D {
 		System.out.println("okay");
 		
 		System.out.println(crush("AABBBACDDDFDFFFF"));
-		//System.out.println(crushOnepass("AABBBACDDDFDFFFF"));
-		System.out.println(crushCandy("AABBBAC"));
+//		System.out.println(crushOnepass("AABBBACDDDFDFFFF"));
+		System.out.println(crushCandy("AABBBACCCCD"));
+		System.out.println(crush("CAABBBACCCCD"));
 	}
 
 }

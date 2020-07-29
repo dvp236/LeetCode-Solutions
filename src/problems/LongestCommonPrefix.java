@@ -53,7 +53,7 @@ public class LongestCommonPrefix {
 	
 	//helper method to get lcp of two string
 	private static String lcpHelper(String s1,String s2){
-		int min=s1.length() <= s2.length() ? s1.length() : s2.length();
+		int min= Math.min(s1.length(), s2.length());
 		for(int i=0; i<min; i++){
 			if(s1.charAt(i)!=s2.charAt(i))
 				return s1.substring(0, i);

@@ -20,7 +20,7 @@ public class GenerateParenthesis {
 	}
 	public static void main(String[] args) {
 		System.out.println("all okay");
-		System.out.println(Arrays.toString(generateParenthesis(3)));
+		System.out.println(Arrays.toString(generateParenthesis(2)));
 	}
 
 }
