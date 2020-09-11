@@ -7,7 +7,26 @@ import java.util.*;
 //https://leetcode.com/discuss/interview-question/374846/Twitter-or-OA-2019-or-University-Career-Fair/338400
 public class UniversityCareerFair {
 
-    public static int maxEvents(int[] arrival, int duration[]) {
+    private static int maxEvents(int[] arrival, int[] duration) {
+        int[][] events = new int[arrival.length][2];
+        for(int i=0;i<arrival.length;i++) {
+            events[i] = new int[] {arrival[i], arrival[i] + duration[i]};
+        }
+        Arrays.sort(events, (a, b)->(a[1] - b[1]));
+        Queue<int[]> minHeap = new PriorityQueue<>((a, b)->a[1] - b[1]);
+        int[] first = events[0];
+        for(int i=1;i<events.length;i++) {
+            int[] cur = events[i];
+            if(cur[0] < first[1])
+                minHeap.offer(cur);
+            else {
+                first[1] = events[i][1];
+            }
+        }
+        return arrival.length - minHeap.size();
+    }
+
+    public static int maxEvents1(int[] arrival, int[] duration) {
 
         List<Interval> intervals = new ArrayList<>();
 
@@ -16,26 +35,17 @@ public class UniversityCareerFair {
         }
 
         intervals.sort((a,b) -> {
-            if (a.start != b.start) {
-                return a.start - b.start;
-            } else {
-                return a.end - b.end;
-            }
+            return a.end - b.end;
         });
 
-        // 1 3, 3 4, 3 5, 5 7 , 7 9
-
-
-        //1 2 3 5 6 7
-        //4 1 1 5 1 1
-        // 1 5, 2 3, 3 4, 5 10, 6 7, 7 8
         int result = 1;
-        for (int i = 0 ; i < arrival.length -1; i++) {
-            if (intervals.get(i).end <= intervals.get(i+1).start) {
+        int curr = intervals.get(0).end;
+        for (int i = 1; i < intervals.size(); i++) {
+            if (curr <= intervals.get(i).start) {
                 result++;
+                curr = intervals.get(i).end;
             }
         }
-
         return result;
     }
     public static void main(String[] args) {
@@ -45,8 +55,12 @@ public class UniversityCareerFair {
 
         int[] ar1 =  new int[] {1,2,3,5,6,7};
         int[] du1 = new int[] {4,1,1,5,1,1}; //4
-        System.out.println(maxEvents(arrival, duration));
+
+        int[] aa = new int[]{1,1,1,1,4};
+        int[] dd = new int[]{10,3,6,4,2}; //2
+        System.out.println(maxEvents1(arrival, duration));
         System.out.println("hello");
-        System.out.println(maxEvents(ar1,du1));
+        System.out.println(maxEvents1(ar1,du1));
+        System.out.println(maxEvents1(aa,dd));
     }
 }

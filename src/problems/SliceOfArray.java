@@ -8,8 +8,8 @@ public class SliceOfArray {
 		int aIndex = 0;
 		while (aIndex < a.length && bIndex < b.length){
 			if( a[aIndex] != b[bIndex]){
+				if (bIndex == 0) aIndex++;
 				bIndex = 0;
-				aIndex++;
 			}
 			else {
 				aIndex++;
@@ -20,7 +20,7 @@ public class SliceOfArray {
 		return true;
 	}
 	public static void main(String[] args) {
-		int[] a = new int[]{1,2,5,6,5,6,7};
+		int[] a = new int[]{7,1,2,5,6,5,6,7};
 		int[] b = new int[]{5,6,7};
 		System.out.println(checkIfSubset(a, b));
 	}
