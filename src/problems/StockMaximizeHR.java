@@ -36,6 +36,6 @@ public class StockMaximizeHR {
         int[] p = new int []{1,2,100};
         int[] a = new int[]{1,3,1,2};
         int[] b = new int[]{1,5,1,10,9,2,4};
-        System.out.println(profit(b));
+        System.out.println(profit(pr));
     }
 }

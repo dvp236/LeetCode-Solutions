@@ -17,9 +17,8 @@ public class UrlTracker {
 	public ArrayList<String> getTop3() {
 		PriorityQueue<String> q = new PriorityQueue<>((u1,u2)->map.get(u1) - map.get(u2));
 		for(String url: map.keySet()) {
-			if(q.size() < 3) q.offer(url);
-			else {
-				q.offer(url);
+			q.offer(url);
+			if (q.size() > 3) {
 				q.poll();
 			}
 		}

@@ -67,6 +67,6 @@ public class SubArraySumEqualsK {
         int[] d = new int[] {7,1,7,1,7,1};
 
         System.out.println(contSubarraySum(b, 100 ));
-        System.out.println(countSubarraySum1(d, 8));
+        System.out.println(countSubarraySum1(c, 0));
     }
 }

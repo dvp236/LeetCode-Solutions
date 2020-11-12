@@ -59,15 +59,7 @@ public class MinimumWindowSubstring {
 		
 	}
 	
-	public static String minWindowPrac (String s, String t) {
-		if ( s ==  null || t == null || s.length() == 0 || t.length() == 0 || t.length() >= s.length())
-			throw new IllegalArgumentException("not valid ");
-		int[] map= new int[128];
-		int left = 0;
-		String result = "";
-		
-		return s;
-	}
+
 	
 	public static String minWindow(String s, String t) {
         int[] arr = new int[128];

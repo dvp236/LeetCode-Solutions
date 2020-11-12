@@ -36,7 +36,7 @@ public class WordBreakII {
 	
 	public static void main(String[] args) {
 		Set<String> hs = new HashSet<String>();
-		hs.add("pine"); hs.add("apple"); hs.addAll(Arrays.asList(new String[]{"dogs","cat","sand","dog","and"}));
+		hs.add("pine"); hs.add("apple"); hs.addAll(Arrays.asList(new String[]{"dogs","cat","sand","dog","and", "cats"}));
 		
 		List<String> res = wordBreak("catsanddog", hs);
 		System.out.println(res);

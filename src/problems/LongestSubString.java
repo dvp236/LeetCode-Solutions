@@ -13,15 +13,17 @@ import java.util.HashSet;
 public class LongestSubString {
 	//pwwketaw
 	public static void test (String s) {
-		int n = s.length() -1, index, lo, hi, max=0; 
+		int n = s.length() -1, index, lo, hi, max=0;
+		int i = 0;
 		HashMap<Character, Integer> map = new HashMap<Character, Integer> ();
-		for (int i = 0 ; i <= n; i++) {
-			if (map.containsKey(s.charAt(i))) {
-				index = map.get(s.charAt(i));
-				max = Math.max(max, index);
+		for (int j = 0 ; j < s.length(); j++) {
+			if (map.containsKey(j)) {
+				i = Math.max(i, map.get(j));
 			}
-			
+			max = Math.max(j-i+1, max);
+			map.put(s.charAt(j), j+1);
 		}
+		//max is max length;
 	}
 	
 	public static int getLengthOfSubstring(String s) {
@@ -30,7 +32,7 @@ public class LongestSubString {
         //Goal is to maintain the window of substring
         //between i and j 
         //[i,j] is the substring 
-        for (int j = 0, i = 0; j < n; ++j) {
+        for (int j = 0, i = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
             	//we have to take max of i and map index
             	//because the window only moves forward.

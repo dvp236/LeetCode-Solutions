@@ -49,7 +49,7 @@ public class TopKFrequentElements {
 		list.addAll(map.keySet());
 		
 		Collections.sort(list,(a1,a2)->map.get(a2)-map.get(a1));
-		List<Integer> res = list.subList(0,k);
+		List<Integer> res = list.subList(0,Math.min(k, map.size()));
 		System.out.println(Arrays.toString(res.toArray()));
 	}
 	
@@ -73,7 +73,13 @@ public class TopKFrequentElements {
 		ArrayList<Integer> res = new ArrayList<>();
 		for(int i = bucket.length - 1; i >= 0&&res.size() < k; i--) {
 			if (bucket[i] != null) {
-				res.addAll(bucket[i]);
+				//shouldnt do add all.. instead only add k-res.size()
+				if(k - res.size() >= bucket[i].size()) {
+					res.addAll(bucket[i]);
+				} else {
+					int len = k - res.size();
+					res.addAll(bucket[i].subList(0,len));
+				}
 			}
 		}
 		
@@ -104,7 +110,8 @@ public class TopKFrequentElements {
 	public static void main(String[] args) {
 //		System.out.println("Siddhi tene jai vare, je parseve nhay");
 //		
-		int[] a =  new int[] {1,1,1,1,1,1,22,2,2,2,2,2,2,2,3,3,3,4,4,4,5};
+//		int[] a =  new int[] {1,1,1,1,22,2,2,2,2,2,2,2,3,3,3,4,4,4,5};
+		int[] a = new int[]{1,1,1,1,1,1,1,1};
 		topK(a, 2);
 		topk2(a,2);
 		topk3(a,2);
