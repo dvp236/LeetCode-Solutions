@@ -1,6 +1,5 @@
 package problems;
 
-import sun.misc.Queue;
 
 import java.util.Arrays;
 import java.util.Collections;

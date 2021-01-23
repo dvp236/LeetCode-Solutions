@@ -1,7 +1,6 @@
 package problems.tree;
 
 import problems.TreeNode;
-import sun.reflect.generics.tree.Tree;
 
 import java.util.Deque;
 import java.util.LinkedList;
